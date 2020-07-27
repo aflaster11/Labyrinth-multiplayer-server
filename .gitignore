@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+build
+dist/
+.DS_Store
+my-app*
+npm-debug.log*
+.env
+.npm/
