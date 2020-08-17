@@ -1,10 +1,13 @@
 import { Application } from 'express';
 import * as express from 'express';
 import { MicroframeworkLoader, MicroframeworkSettings } from 'microframework-w3tec';
-import {createExpressServer, useExpressServer} from 'routing-controllers';
+import { useExpressServer } from 'routing-controllers';
 import { env } from '../env';
 import {useSocketServer} from "socket-controllers";
+import {Logger} from "../lib/logger";
 //import * as nodemailer from 'nodemailer';
+
+const log = new Logger(__dirname);
 
 export const expressLoader: MicroframeworkLoader = (settings: MicroframeworkSettings | undefined) => {
     if (settings) {
@@ -48,5 +51,6 @@ export const expressLoader: MicroframeworkLoader = (settings: MicroframeworkSett
 
         // Here we can set the data for other loaders
         settings.setData('express_app', expressApp);
+        log.info("Server is configured");
     }
 };
