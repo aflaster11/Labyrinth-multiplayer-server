@@ -51,6 +51,6 @@ export const expressLoader: MicroframeworkLoader = (settings: MicroframeworkSett
 
         // Here we can set the data for other loaders
         settings.setData('express_app', expressApp);
-        log.info("Server is configured");
+        log.info("Express and Socket.io are configured");
     }
 };
