@@ -45,5 +45,8 @@
     "typescript": "^3.9.7",
     "uuidv4": "^6.2.0",
     "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.11"
   }
 }

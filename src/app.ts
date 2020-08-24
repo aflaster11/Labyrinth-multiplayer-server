@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import { bootstrapMicroframework } from 'microframework-w3tec';
 import { Logger } from './lib/logger';
 import { expressLoader } from './loaders/expressLoaders';
+import { socketLoader } from './loaders/socketLoader';
 import { firebaseLoader } from "./loaders/firebaseLoader";
 import { typeormLoader } from './loaders/typeormLoader';
 import { winstonLoader } from './loaders/winstonLoader';
@@ -22,6 +23,7 @@ bootstrapMicroframework({
         iocLoader,
         typeormLoader,
         expressLoader,
+        socketLoader,
         firebaseLoader,
     ],
 })

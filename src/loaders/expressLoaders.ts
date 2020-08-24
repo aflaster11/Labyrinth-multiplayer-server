@@ -3,7 +3,6 @@ import * as express from 'express';
 import { MicroframeworkLoader, MicroframeworkSettings } from 'microframework-w3tec';
 import { useExpressServer } from 'routing-controllers';
 import { env } from '../env';
-import {useSocketServer} from "socket-controllers";
 import {Logger} from "../lib/logger";
 //import * as nodemailer from 'nodemailer';
 
@@ -40,9 +39,8 @@ export const expressLoader: MicroframeworkLoader = (settings: MicroframeworkSett
             //authorizationChecker: authorizationChecker(connection),
             // currentUserChecker: currentUserChecker(connection),
         });
-        useSocketServer(expressApp, {
-            controllers: env.app.dirs.wsControllers,
-        });
+
+
         // Run application to listen on given port
         if (!env.isTest) {
             const server = expressApp.listen(env.app.port);
@@ -51,6 +49,6 @@ export const expressLoader: MicroframeworkLoader = (settings: MicroframeworkSett
 
         // Here we can set the data for other loaders
         settings.setData('express_app', expressApp);
-        log.info("Express and Socket.io are configured");
+        log.info("Express server is configured");
     }
 };
